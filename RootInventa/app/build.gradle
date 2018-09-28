@@ -62,9 +62,9 @@ dependencies {
     implementation "com.google.android.gms:play-services-maps:15.0.0"
     implementation "com.google.android.gms:play-services-places:15.0.0"
     implementation "com.google.android.gms:play-services-plus:15.0.0"
-    implementation 'com.google.firebase:firebase-core:16.0.3'
-    implementation 'com.google.firebase:firebase-messaging:17.3.2'
-    implementation 'com.google.firebase:firebase-perf:16.1.0'
+  //  implementation 'com.google.firebase:firebase-core:16.0.3'
+    //implementation 'com.google.firebase:firebase-messaging:17.3.2'
+    //implementation 'com.google.firebase:firebase-perf:16.1.0'
     implementation 'com.google.maps.android:android-maps-utils:0.4.3'
     implementation 'com.android.installreferrer:installreferrer:1.0'
     implementation 'com.facebook.android:notifications:1.0.2'
@@ -111,42 +111,6 @@ dependencies {
     implementation 'com.android.support:multidex:1.+'
 
     implementation ('proto.inventa-cct.com.inventalibrary:inventa-android-library:1.0.7')
-            {
-//                exclude group: 'android'
-//                exclude group: 'javax'
-//                exclude group: 'okhttp'
-//                exclude group: 'okio'
-//                exclude group: 'com.google'
-//                exclude group: 'com.github.bumptech.glide', module: 'glide'
-////                exclude group: 'com.bumptech.glide', module: 'MemoryCategory'
-////                exclude group: 'com.bumptech.glide', module: 'ModelTypes'
-//                exclude group: 'com.github.bumptech.glide', module: 'Glide'
-//                exclude group: 'com.bumptech.glide.Glide'
-//                exclude group: 'com.bumptech.glide', module: 'BuildConfig'
-//                exclude group: 'com.github.bumptech.glide', module: 'compiler'
-//                exclude group: 'com.github.bumptech.glide', module: 'disklrucache'
-//                exclude group: 'com.github.bumptech.glide', module: 'annotations'
-//                exclude group: 'com.github.bumptech.glide', module: 'gifdecoder'
-//                exclude group: 'org.json', module: 'json'
-//                exclude group: 'com.android.support'
-
-//                exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
-//                exclude group: 'com.squareup.okhttp3', module: 'logging-interceptor'
-//                exclude group: 'com.squareup.okhttp3', module: 'okhttp'
-//                exclude group: 'com.squareup.okhttp3', module: 'okhttp3'
-                //exclude retrofit
-
-//                exclude group: 'com.squareup.retrofit2', module: 'retrofit'
-//                exclude group: 'com.squareup.retrofit2', module: 'adapter-rxjava'
-//                exclude group: 'com.squareup.retrofit2', module: 'converter-gson'
-//                exclude group: 'com.squareup.retrofit2', module: 'converter-scalars'
-//                exclude group: 'com.google.code.gson', module: 'gson'
-            }
-
-    /* glide - for loading and caching images */
-//    implementation ('com.github.bumptech.glide:glide:4.7.1') {
-//        exclude group: "com.android.support"
-//    }
 
     //clevertap for anyalytics
     implementation ('com.clevertap.android:clevertap-android-sdk:3.1.10') {
