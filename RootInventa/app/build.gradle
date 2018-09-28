@@ -11,6 +11,7 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled  true
     }
     buildTypes {
         release {
@@ -47,7 +48,10 @@ dependencies {
     implementation('io.socket:socket.io-client:1.0.0') {
         // excluding org.json which is provided by Android
         exclude group: 'org.json', module: 'json'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
+        exclude group: 'com.squareup.okhttp3', module: 'logging-interceptor'
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp3'
     }
     /* dagger2 - for dependency injection */
     implementation 'com.google.dagger:dagger:2.14.1'
@@ -71,9 +75,9 @@ dependencies {
     implementation 'android.arch.lifecycle:common-java8:1.1.1'
     annotationProcessor "android.arch.persistence.room:compiler:1.1.1"
 
-    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
-    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
-    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+//    implementation 'com.squareup.retrofit2:retrofit:2.4.0'
+//    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
+//    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.2.0'
@@ -88,39 +92,71 @@ dependencies {
     implementation files('libs/apache-mime4j-0.6.jar')
     implementation files('libs/YouTubeAndroidPlayerApi.jar')
 
-    implementation "com.squareup.okhttp3:okhttp-urlconnection:3.10.0"
-    implementation "com.squareup.okhttp3:okhttp:3.10.0"
-    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
+    /*
+    https://github.com/square/okhttp/issues/3150
+    compile 'com.squareup.retrofit2:converter-gson:2.1.0'
+    compile 'com.squareup.retrofit2:retrofit:2.1.0'
+    already pulls following modules:
+
+    okhttp-3.2.0
+    okio-1.6.0
+    retrofit-2.0.1
+    converter-gson-2.0.1
+     */
+//    implementation "com.squareup.okhttp3:okhttp-urlconnection:3.10.0"
+//    implementation "com.squareup.okhttp3:okhttp:3.10.0"
+//    implementation 'com.squareup.okhttp3:logging-interceptor:3.8.1'
 
     // Multidex
     implementation 'com.android.support:multidex:1.+'
 
     implementation ('proto.inventa-cct.com.inventalibrary:inventa-android-library:1.0.7')
             {
-                exclude group: 'android'
-                exclude group: 'javax'
-                exclude group: 'okhttp'
-                exclude group: 'okhttp3'
-                exclude group: 'okio'
-                exclude group: 'com.google'
-                exclude group: 'com.github.bumptech.glide', module: 'glide'
-//                exclude group: 'com.bumptech.glide', module: 'MemoryCategory'
-//                exclude group: 'com.bumptech.glide', module: 'ModelTypes'
-                exclude group: 'com.github.bumptech.glide', module: 'Glide'
-                exclude group: 'com.bumptech.glide.Glide'
-                exclude group: 'com.bumptech.glide', module: 'BuildConfig'
-                exclude group: 'com.github.bumptech.glide', module: 'compiler'
-                exclude group: 'com.github.bumptech.glide', module: 'disklrucache'
-                exclude group: 'com.github.bumptech.glide', module: 'annotations'
-                exclude group: 'com.github.bumptech.glide', module: 'gifdecoder'
-                exclude group: 'org.json', module: 'json'
-                exclude group: 'com.android.support'
-                exclude group: 'com.squareup.retrofit2'
+//                exclude group: 'android'
+//                exclude group: 'javax'
+//                exclude group: 'okhttp'
+//                exclude group: 'okio'
+//                exclude group: 'com.google'
+//                exclude group: 'com.github.bumptech.glide', module: 'glide'
+////                exclude group: 'com.bumptech.glide', module: 'MemoryCategory'
+////                exclude group: 'com.bumptech.glide', module: 'ModelTypes'
+//                exclude group: 'com.github.bumptech.glide', module: 'Glide'
+//                exclude group: 'com.bumptech.glide.Glide'
+//                exclude group: 'com.bumptech.glide', module: 'BuildConfig'
+//                exclude group: 'com.github.bumptech.glide', module: 'compiler'
+//                exclude group: 'com.github.bumptech.glide', module: 'disklrucache'
+//                exclude group: 'com.github.bumptech.glide', module: 'annotations'
+//                exclude group: 'com.github.bumptech.glide', module: 'gifdecoder'
+//                exclude group: 'org.json', module: 'json'
+//                exclude group: 'com.android.support'
+
+//                exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
+//                exclude group: 'com.squareup.okhttp3', module: 'logging-interceptor'
+//                exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+//                exclude group: 'com.squareup.okhttp3', module: 'okhttp3'
+                //exclude retrofit
+
+//                exclude group: 'com.squareup.retrofit2', module: 'retrofit'
+//                exclude group: 'com.squareup.retrofit2', module: 'adapter-rxjava'
+//                exclude group: 'com.squareup.retrofit2', module: 'converter-gson'
+//                exclude group: 'com.squareup.retrofit2', module: 'converter-scalars'
+//                exclude group: 'com.google.code.gson', module: 'gson'
             }
 
     /* glide - for loading and caching images */
-    implementation ('com.github.bumptech.glide:glide:4.7.1') {
-        exclude group: "com.android.support"
+//    implementation ('com.github.bumptech.glide:glide:4.7.1') {
+//        exclude group: "com.android.support"
+//    }
+
+    //clevertap for anyalytics
+    implementation ('com.clevertap.android:clevertap-android-sdk:3.1.10') {
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp-urlconnection'
+        exclude group: 'com.squareup.okhttp3', module: 'logging-interceptor'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp'
+        exclude group: 'com.squareup.okhttp3', module: 'okhttp3'
     }
+//    implementation'com.google.android.gms:play-services-gcm:15.0.1'
+//    implementation 'com.google.android.gms:play-services-base:15.0.0'
+
     annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 }
