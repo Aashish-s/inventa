@@ -79,6 +79,14 @@ dependencies {
 //    implementation 'com.squareup.retrofit2:adapter-rxjava:2.3.0'
 //    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
 
+
+    /* glide - for loading and caching images */
+    implementation 'com.github.bumptech.glide:glide:4.7.1'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
+
+    /* leak Canary - for memory leak detection */
+    implementation 'com.squareup.leakcanary:leakcanary-android-no-op:1.4-beta2'
+
     implementation 'com.flaviofaria:kenburnsview:1.0.7'
     implementation 'com.github.castorflex.smoothprogressbar:library-circular:1.2.0'
     implementation 'com.hovans.flipview:flipview:1.2.1'
@@ -110,7 +118,9 @@ dependencies {
     // Multidex
     implementation 'com.android.support:multidex:1.+'
 
-    implementation ('proto.inventa-cct.com.inventalibrary:inventa-android-library:1.0.7')
+    implementation ('proto.inventa-cct.com.inventalibrary:inventa-android-library:1.0.7.1')
+
+
 
     //clevertap for anyalytics
     implementation ('com.clevertap.android:clevertap-android-sdk:3.1.10') {
@@ -119,8 +129,4 @@ dependencies {
         exclude group: 'com.squareup.okhttp3', module: 'okhttp'
         exclude group: 'com.squareup.okhttp3', module: 'okhttp3'
     }
-//    implementation'com.google.android.gms:play-services-gcm:15.0.1'
-//    implementation 'com.google.android.gms:play-services-base:15.0.0'
-
-    annotationProcessor 'com.github.bumptech.glide:compiler:4.7.1'
 }
