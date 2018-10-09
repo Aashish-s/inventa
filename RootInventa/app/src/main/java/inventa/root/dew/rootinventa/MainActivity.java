@@ -20,7 +20,10 @@ public class MainActivity extends Activity{
         setContentView(R.layout.activity_main);
         imgView = (ImageView) findViewById(R.id.imgView);
 
-        setGlide();
+      //  setGlide();
+
+        String url  = "https://d1kuqs143iyp10.cloudfront.net/1170x/5954a3e50761600009cceb7c-5955fafe076160000984e893-Tata-Cliq-Blogbeats.jpg";
+        loadImageWithGlideRequests(url,true);
     }
 
     private void setGlide() {
@@ -43,7 +46,7 @@ public class MainActivity extends Activity{
         try {
             LazyHeaders auth = new LazyHeaders.Builder()
                     .build();
-            GlideRequests glideRequests = GlideApp.with(this);
+           GlideRequests glideRequests = GlideApp.with(this);
             RequestOptions requestOptions =
                     new RequestOptions().placeholder(R.drawable.avatar)
                             .diskCacheStrategy(DiskCacheStrategy.AUTOMATIC).dontTransform();
