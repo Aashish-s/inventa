@@ -20,9 +20,10 @@ public class MainActivity extends Activity{
         setContentView(R.layout.activity_main);
         imgView = (ImageView) findViewById(R.id.imgView);
 
-      //  setGlide();
+      //setGlide();
 
         String url  = "https://d1kuqs143iyp10.cloudfront.net/1170x/5954a3e50761600009cceb7c-5955fafe076160000984e893-Tata-Cliq-Blogbeats.jpg";
+        // Code using glide request
         loadImageWithGlideRequests(url,true);
     }
 
@@ -39,7 +40,7 @@ public class MainActivity extends Activity{
                         .dontTransform())
                 .into(imgView);
         // Code using glide request
-        loadImageWithGlideRequests(url, true);
+        //loadImageWithGlideRequests(url, true);
     }
 
     private void loadImageWithGlideRequests(String url, boolean b){
