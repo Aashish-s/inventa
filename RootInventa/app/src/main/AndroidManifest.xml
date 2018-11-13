@@ -25,6 +25,10 @@
             <intent-filter>
                 <action android:name="inventa.intent.action.DISCOVERY.ENGAGEMENTZONES"/>
                 <action android:name="inventa.intent.action.DISCOVERY.GEOZONES"/>
+                <action android:name="inventa.intent.action.DISCOVERY.INSTORE"/>
+                <action android:name= " inventa.intent.action.notification.ACTION_NOTIFICATION_CLICK_GZONE"/>
+                <action android:name= "inventa.intent.action.notification.ACTION_NOTIFICATION_CLICK_EZONE"/>
+                <action android:name= "inventa.intent.action.notification.ACTION_NOTIFICATION_CLICK_INSTORE"/>
             </intent-filter>
 
         </receiver>
